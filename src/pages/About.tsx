@@ -175,6 +175,40 @@ export default function About() {
           </div>
         </section>
 
+        {/* 7. SECCIÓN /Encuéntranos/ - Ubicación con mapa interactivo */}
+        <section className="w-full">
+          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
+            /Encuéntranos/
+          </h2>
+
+          {/* Marco rojo con mapa interactivo */}
+          <div className="bg-accent p-6 md:p-8">
+            <div className="h-[320px] md:h-[450px] w-full overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233.65339973821847!2d-97.32608304325412!3d20.446521883094544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85da443c1a23a70b%3A0x6ba3d5234a44e495!2sLa%20Boca!5e0!3m2!1ses!2smx!4v1791958996563!5m2!1ses!2smx"
+                title="Mapa de ubicación de La Boca Asadero"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+          </div>
+
+          {/* Enlace para abrir indicaciones en Google Maps */}
+          <div className="flex justify-center md:justify-start">
+            <a
+              href="https://maps.app.goo.gl/LpChoMn2nYYUZTYT9"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block bg-accent text-cream px-10 py-4 text-xs md:text-sm font-semibold tracking-widest uppercase hover:bg-accent/90 transition-colors mt-8"
+            >
+              Cómo llegar
+            </a>
+          </div>
+        </section>
+
       </div>
     </div>
   );
