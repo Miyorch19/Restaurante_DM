@@ -10,7 +10,7 @@ export default function About() {
     return () => setHasDarkHero(false);
   }, [setHasDarkHero]);
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="bg-cream min-h-screen overflow-x-hidden">
       <section className="relative min-h-screen w-full flex items-center justify-center">
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -30,7 +30,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col gap-24 w-full">
         
         <section className="w-full">
-          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
+          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(2.5rem, 12vw, 8rem)' }}>
             /Historia/
           </h2>
           
@@ -81,7 +81,7 @@ export default function About() {
         </section>
 
         <section className="w-full">
-          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
+          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(2.5rem, 12vw, 8rem)' }}>
             /Nuestra cocina/
           </h2>
           
@@ -111,7 +111,7 @@ export default function About() {
         </section>
 
         <section className="w-full">
-          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
+          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(2.5rem, 12vw, 8rem)' }}>
             /Testimonios/
           </h2>
 
@@ -160,7 +160,7 @@ export default function About() {
         </section>
 
         <section className="w-full">
-          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
+          <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(2.5rem, 12vw, 8rem)' }}>
             /Encuéntranos/
           </h2>
 
