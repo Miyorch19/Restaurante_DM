@@ -127,11 +127,8 @@ export const menuItems: MenuItem[] = [
   ]},
 ];
 
-// Mantenemos la galería vacía o mínima para que no dé errores en otros lugares,
-// aunque la página de galería se eliminó.
 export const galleryImages: GalleryImage[] = [];
 
-// Testimonios de clientes para la página Nosotros
 export const testimonios: Testimonio[] = [
   {
     id: "t1",

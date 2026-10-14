@@ -10,10 +10,8 @@ export default function Navbar({ hasDarkHero = false }: { hasDarkHero?: boolean 
   const handleContacto = () => {
     setIsOpen(false);
     if (location.pathname === '/') {
-      // Ya estamos en Home — scroll directo
       document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Navegar a Home y luego hacer scroll
       navigate('/');
       setTimeout(() => {
         document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
@@ -30,7 +28,6 @@ export default function Navbar({ hasDarkHero = false }: { hasDarkHero?: boolean 
       }
     };
     
-    // Configurar estado inicial
     handleScroll();
     
     window.addEventListener('scroll', handleScroll);
@@ -57,7 +54,6 @@ export default function Navbar({ hasDarkHero = false }: { hasDarkHero?: boolean 
             </Link>
           </div>
           
-          {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-10">
             {links.map((link) => (
               <Link
@@ -78,7 +74,6 @@ export default function Navbar({ hasDarkHero = false }: { hasDarkHero?: boolean 
             </button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -97,7 +92,6 @@ export default function Navbar({ hasDarkHero = false }: { hasDarkHero?: boolean 
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className={`md:hidden ${isSolid ? 'bg-cream border-t border-dark/10' : 'bg-dark/90 backdrop-blur-sm'}`}>
           <div className="px-4 pt-4 pb-6 space-y-4">

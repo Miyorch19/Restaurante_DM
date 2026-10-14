@@ -11,9 +11,7 @@ export default function About() {
   }, [setHasDarkHero]);
   return (
     <div className="bg-cream min-h-screen">
-      {/* 1. HERO */}
       <section className="relative min-h-screen w-full flex items-center justify-center">
-        {/* Background Image & Overlay */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: 'url("https://res.cloudinary.com/dwvegpaaf/image/upload/v1785119222/nosotros2_wxpjqq.jpg")' }}
@@ -21,7 +19,6 @@ export default function About() {
           <div className="absolute inset-0 bg-dark/60"></div>
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-10 text-center flex flex-col pt-16">
           <h1 className="font-serif text-cream leading-none tracking-tight" style={{ fontSize: 'clamp(4rem, 12vw, 10rem)' }}>
             Nuestra
@@ -30,10 +27,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* CONTENEDOR PRINCIPAL */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col gap-24 w-full">
         
-        {/* 2. SECCIÓN /Historia/ */}
         <section className="w-full">
           <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
             /Historia/
@@ -41,7 +36,6 @@ export default function About() {
           
           <div className="relative w-full min-h-[600px] md:min-h-[500px] overflow-visible">
             
-            {/* Bloque de imagen — centrado absoluto e independiente */}
             <div className="w-full flex justify-center">
               <div className="relative w-full max-w-xl">
                 <div className="bg-accent p-8 md:p-11">
@@ -59,8 +53,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Columna de texto — posicionada de forma absoluta a la derecha del 
-                centro de la página, SIN afectar el centrado de la imagen */}
             <div className="hidden md:flex flex-col gap-10 absolute top-0 left-[calc(50%+310px)] max-w-md z-10">
               <p className="font-mono font-bold text-accent text-[0.65rem] md:text-xs leading-relaxed">
                 Nuestra historia comenzó con la pasión por ofrecer experiencias culinarias memorables. En {restaurantInfo.nombrePrincipal}, creemos que la comida no es solo sustento, sino un arte que reúne a las personas.
@@ -70,7 +62,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Versión mobile del texto — apilado debajo, sin posición absoluta */}
             <div className="flex md:hidden flex-col gap-10 max-w-md mx-auto mt-12 px-4">
               <p className="font-mono font-bold text-accent text-[0.65rem] leading-relaxed">
                 Nuestra historia comenzó con la pasión por ofrecer experiencias culinarias memorables. En {restaurantInfo.nombrePrincipal}, creemos que la comida no es solo sustento, sino un arte que reúne a las personas.
@@ -83,14 +74,12 @@ export default function About() {
           </div>
         </section>
 
-        {/* 3. CITA DESTACADA */}
         <section className="py-8 w-full">
           <h3 className="font-mono font-bold text-accent text-2xl md:text-3xl lg:text-4xl text-left leading-snug w-full">
             "Cocinar es amar. Y amar es dar todo lo que tienes, en cada plato."
           </h3>
         </section>
 
-        {/* 4. SECCIÓN /Nuestra cocina/ */}
         <section className="w-full">
           <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
             /Nuestra cocina/
@@ -112,7 +101,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* 5. CITA FINAL + CIERRE */}
         <section className="text-left pb-12 w-full">
           <h3 className="font-mono font-bold text-accent text-2xl md:text-3xl lg:text-4xl leading-snug mb-8 w-full">
             "Una mesa bien servida es el comienzo de las mejores historias."
@@ -122,7 +110,6 @@ export default function About() {
           </p>
         </section>
 
-        {/* 6. SECCIÓN /Testimonios/ */}
         <section className="w-full">
           <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
             /Testimonios/
@@ -135,7 +122,6 @@ export default function About() {
                 className="bg-accent text-cream p-6 md:p-8 flex flex-col justify-between items-center md:items-start text-center md:text-left"
               >
                 <div>
-                  {/* Calificación de 5 estrellas */}
                   <div className="flex gap-1 mb-4" aria-label="5 de 5 estrellas" role="img">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <svg
@@ -155,13 +141,11 @@ export default function About() {
                     ))}
                   </div>
 
-                  {/* Comentario en font-mono */}
                   <blockquote className="font-mono text-xs md:text-sm leading-relaxed mb-6">
                     "{t.comentario}"
                   </blockquote>
                 </div>
 
-                {/* Nombre del cliente en font-serif italic y detalle debajo */}
                 <figcaption className="w-full flex flex-col items-center md:items-start mt-auto">
                   <span className="font-serif italic text-xl md:text-2xl leading-none">
                     {t.nombre}
@@ -175,13 +159,11 @@ export default function About() {
           </div>
         </section>
 
-        {/* 7. SECCIÓN /Encuéntranos/ - Ubicación con mapa interactivo */}
         <section className="w-full">
           <h2 className="font-serif italic text-accent leading-none mb-12" style={{ fontSize: 'clamp(4.8rem, 9.6vw, 8rem)' }}>
             /Encuéntranos/
           </h2>
 
-          {/* Marco rojo con mapa interactivo */}
           <div className="bg-accent p-6 md:p-8">
             <div className="h-[320px] md:h-[450px] w-full overflow-hidden">
               <iframe
@@ -196,7 +178,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Enlace para abrir indicaciones en Google Maps */}
           <div className="flex justify-center md:justify-start">
             <a
               href="https://maps.app.goo.gl/LpChoMn2nYYUZTYT9"

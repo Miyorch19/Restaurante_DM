@@ -13,20 +13,16 @@ export default function Home() {
 
   const currentYear = new Date().getFullYear();
   
-  // Tabs for Menu Filter
   const [activeTab, setActiveTab] = useState('Parrilla');
   const filteredMenu = menuItems.filter(item => item.categoria === activeTab);
   const pizzas = menuItems.filter(item => item.categoria === 'Pizzas').slice(0, 3);
 
-  // Hover state for menu items
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col min-h-screen bg-cream font-mono">
-      {/* 1. HERO SECTION */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-cream pt-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-dark overflow-hidden">
-          {/* Background image */}
           <div 
             className="w-full h-full bg-cover bg-center opacity-50"
             style={{ backgroundImage: "url('https://res.cloudinary.com/dwvegpaaf/image/upload/v1785108907/HERORES_yufhiz.jpg')" }}
@@ -52,15 +48,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. SECCIÓN MENÚ DESTACADO */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-        {/* Encabezado y Tabs */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <h2 className="font-serif italic text-6xl md:text-8xl text-accent leading-none">
             /Menú/
           </h2>
           
-          {/* Tabs - 2x2 grid on mobile, flex on desktop */}
           <div className="grid grid-cols-2 md:flex w-full md:w-fit md:border md:border-accent md:mb-4 gap-[1px] md:gap-0 bg-accent md:bg-transparent border border-accent">
             {['Parrilla', 'Pastas', 'Ensaladas', 'Postres'].map((tab) => {
               const isActive = tab === activeTab;
@@ -79,14 +72,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Header — grid-cols-[280px_1fr_120px] idéntico al de cada fila */}
         <div className="hidden sm:grid grid-cols-[1fr_1.5fr_1fr] gap-4 text-xs text-accent tracking-widest border-b border-dashed border-accent pb-2">
           <span>(Platillo)</span>
           <span>(Descripción)</span>
           <span className="text-right">(Precio)</span>
         </div>
 
-        {/* Menu Items */}
         <div className="mb-16">
           {filteredMenu.length > 0 ? filteredMenu.map((item) => {
             const isActive = hoveredItem === item.id;
@@ -97,7 +88,6 @@ export default function Home() {
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                {/* Fila — mismo grid-cols-[1fr_1.5fr_1fr] que el header */}
                 <div className="grid grid-cols-[1fr_1.5fr_1fr] items-baseline gap-4 py-6">
                   <span className="font-bold text-accent text-lg">{item.nombre}</span>
 
@@ -123,7 +113,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SECCIÓN ESPECIALIDADES */}
       <section className="pt-8 pb-24 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-serif text-5xl md:text-7xl text-accent mb-6">
@@ -134,10 +123,8 @@ export default function Home() {
           </p>
         </div>
 
-        {/* CSS Grid for touching corners */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative">
           
-          {/* Margarita */}
           {pizzas[0] && (
             <>
               <div className="w-full aspect-square bg-accent p-4 md:p-6 flex items-center justify-center order-2 md:order-1">
@@ -154,7 +141,6 @@ export default function Home() {
                     {pizzas[0].descripcion}
                   </p>
                 </div>
-                {/* Separador visual inferior en Desktop (Absolute para no romper aspect-square) */}
                 <div className="absolute left-0 right-0 -bottom-10 hidden md:flex justify-center pointer-events-none z-10">
                   <img 
                     src="https://res.cloudinary.com/dwvegpaaf/image/upload/v1785109381/pizzero_gy9nf3.png" 
@@ -167,10 +153,8 @@ export default function Home() {
             </>
           )}
 
-          {/* Pepperoni */}
           {pizzas[1] && (
             <>
-              {/* Mobile Separator */}
               <div className="w-full flex justify-center py-4 order-3 md:hidden">
                   <img 
                     src="https://res.cloudinary.com/dwvegpaaf/image/upload/v1785109381/pizzero_gy9nf3.png" 
@@ -188,7 +172,6 @@ export default function Home() {
                     {pizzas[1].descripcion}
                   </p>
                 </div>
-                {/* Separador visual inferior en Desktop (espejo) (Absolute) */}
                 <div className="absolute left-0 right-0 -bottom-10 hidden md:flex justify-center pointer-events-none z-10">
                   <img 
                     src="https://res.cloudinary.com/dwvegpaaf/image/upload/v1785109381/pizzero_gy9nf3.png" 
@@ -206,7 +189,6 @@ export default function Home() {
             </>
           )}
 
-          {/* Prosciutto */}
           {pizzas[2] && (
             <>
               <div className="w-full aspect-square bg-accent p-4 md:p-6 flex items-center justify-center order-8 md:order-5 mt-4 md:mt-0">
@@ -214,7 +196,6 @@ export default function Home() {
                   {pizzas[2]?.imagenes[0] && <img src={pizzas[2].imagenes[0]} alt={pizzas[2].nombre} className="w-full h-full object-cover" />}
                 </div>
               </div>
-              {/* Mobile Separator (Missing previously) */}
               <div className="w-full flex justify-center py-4 order-6 md:hidden mt-4">
                   <img 
                     src="https://res.cloudinary.com/dwvegpaaf/image/upload/v1785109381/pizzero_gy9nf3.png" 
@@ -242,7 +223,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-              {/* Final Mobile Separator after last pizza */}
               <div className="w-full flex justify-center py-4 order-9 md:hidden mt-4">
                   <img 
                     src="https://res.cloudinary.com/dwvegpaaf/image/upload/v1785109381/pizzero_gy9nf3.png" 
@@ -257,7 +237,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CTA */}
       <section className="py-24 text-center">
         <Link 
           to="/menu" 
@@ -267,9 +246,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 5. SECCIÓN CONTACTO */}
       <section id="contacto" className="relative py-32 flex items-center justify-center min-h-[70vh]">
-        {/* Split Backgrounds */}
         <div className="absolute inset-0 flex">
           <div 
             className="w-1/2 h-full bg-cover bg-center"
