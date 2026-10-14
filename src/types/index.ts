@@ -4,13 +4,13 @@ export interface MenuItem {
   descripcion: string;
   precio: number;
   categoria: string;
-  imagenes: string[]; // Array of full image URLs
-  imagenMenu?: string; // Optional override image for the Menu page
+  imagenes: string[]; 
+  imagenMenu?: string;
 }
 
 export interface GalleryImage {
   id: string;
-  url: string; // Cloudinary public_id
+  url: string; 
   alt: string;
   categoria: string;
 }
@@ -30,7 +30,6 @@ export interface RestaurantInfo {
   };
 }
 
-// Interfaz para testimonios de clientes
 export interface Testimonio {
   id: string;
   nombre: string;

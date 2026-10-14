@@ -3,7 +3,6 @@ import { restaurantInfo } from '../data/mock';
 export default function Contact() {
   return (
     <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row">
-      {/* Accent Color Block (Info) */}
       <div className="w-full md:w-1/2 bg-accent text-cream flex flex-col justify-center px-8 sm:px-16 py-20">
         <span className="text-xs tracking-[0.2em] uppercase text-cream/70 mb-6">Contáctanos</span>
         <h2 className="font-serif italic text-6xl sm:text-7xl mb-12">Reservas</h2>
@@ -24,7 +23,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Form Section */}
       <div className="w-full md:w-1/2 bg-cream text-dark flex flex-col justify-center px-8 sm:px-16 py-20">
         <div className="max-w-md w-full mx-auto md:mx-0">
           <h3 className="font-serif italic text-4xl mb-8">Envíanos un Mensaje</h3>
